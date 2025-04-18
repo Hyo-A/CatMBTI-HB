@@ -110,7 +110,7 @@ const Result = () => {
           <Button variant="dark" onClick={handleClickButton}>
             RESTART!
           </Button>
-          <KakaoShareButton />
+          <KakaoShareButton data={resultData} />
         </ButtonGroup>
       </Contents>
     </Wrapper>

@@ -17,15 +17,15 @@ const KakaoShareButton = () => {
     // 초기화 잘 되었는지 확인해주는거
   }, []);
 
-  const sharekakao = () => {
+  const sharekakao = ({ data }) => {
+    console.log(data);
+
     Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
         title: "예비 집사 판별기 결과",
-        description:
-          "예비 집사님이 고양이를 키운다면, 잘 맞는 고양이는 코숏 입니다.",
-        imageUrl:
-          "https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+        description: `예비 집사님이 고양이를 키운다면, 잘 맞는 고양이는 ${data.name}입니다.`,
+        imageUrl: `${url}${data.image}`,
         link: {
           mobileWebUrl: resultURL,
           webUrl: resultURL,
