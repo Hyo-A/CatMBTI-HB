@@ -4,6 +4,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "react-bootstrap";
 import { resultdata } from "../assets/resultdata.js";
+import KakaoShareButton from "../components/KakaoShareButton.jsx";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -32,9 +33,6 @@ const Contents = styled.div`
   justify-content: center;
   align-items: center;
   gap: 14px;
-  & > button {
-    font-size: 2rem;
-  }
 `;
 
 const Title = styled.div`
@@ -66,6 +64,15 @@ const Desc = styled.div`
   text-align: center;
 `;
 
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 10px;
+  & > button {
+    font-size: 1.8rem;
+    padding: 5px 18px;
+  }
+`;
+
 const Result = () => {
   const [resultData, setResultData] = useState("");
   const navigate = useNavigate();
@@ -83,8 +90,6 @@ const Result = () => {
     setResultData(result);
   }, [mbti]);
 
-  console.log(resultData);
-
   return (
     <Wrapper>
       <Contents>
@@ -101,9 +106,12 @@ const Result = () => {
           예비 집사님과 찰떡궁합인 고양이는
           <br /> {resultData.best}형 " {resultData.name} " 입니다.
         </Desc>
-        <Button variant="dark" onClick={handleClickButton}>
-          RESTART!
-        </Button>
+        <ButtonGroup>
+          <Button variant="dark" onClick={handleClickButton}>
+            RESTART!
+          </Button>
+          <KakaoShareButton />
+        </ButtonGroup>
       </Contents>
     </Wrapper>
   );
