@@ -49,6 +49,10 @@ const LogoImg = styled.div`
     height: 350px;
     border: 4px solid var(--light-color);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    @media screen and (max-width: 780px) {
+      width: 320px;
+      height: 320px;
+    }
   }
 `;
 
