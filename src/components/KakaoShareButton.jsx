@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 const { Kakao } = window;
 // 이거는 kakao 문법이다 SDK 설치도 잊지말자
 
-const KakaoShareButton = () => {
+const KakaoShareButton = ({ data }) => {
   const url = "https://catmbti-hb.netlify.app/";
   const resultURL = window.location.href;
 
@@ -17,7 +17,7 @@ const KakaoShareButton = () => {
     // 초기화 잘 되었는지 확인해주는거
   }, []);
 
-  const sharekakao = ({ data }) => {
+  const sharekakao = () => {
     console.log(data);
 
     Kakao.Share.sendDefault({
