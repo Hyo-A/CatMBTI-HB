@@ -59,9 +59,9 @@ const Desc = styled.div`
   padding: 11px 14px 8px 14px;
   border-radius: 4px;
   @media screen and (max-width: 780px) {
-    max-width: 340px;
-    font-size: 1.4rem;
-    padding: 16px 16px 11px 16px;
+    max-width: 370px;
+    font-size: 1.5rem;
+    padding: 12px 12px 7px 12px;
     line-height: 150%;
     text-align: center;
   }
